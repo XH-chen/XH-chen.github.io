@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body,div,ul,li{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul li {
+				list-style: none;
+			}
+			
+			#pic {
+				width: 750px;
+				height: 500px;
+				border: 1px solid #ccc;
+				margin: 50px auto;
+				position: relative;
+			}
+			
+			#list {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#list li {
+				float: left;
+				width: 125px;
+				height: 125px;
+				box-shadow: 0 0 1px #ccc;
+				background: url(img/1.jpg);
+			}
+			
+			a {
+				display: block;
+				text-decoration: none;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				margin-top: -25px;
+				background: #000;
+				opacity: .4;
+				color: #fff;
+				font-size: 30px;
+			}
+			
+			#left {
+				left: 0;
+			}
+			
+			#right {
+				right: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="pic">
+			<ul id="list"></ul>
+			<a href="javascript:;" id="left">&lt;</a>
+			<a href="###" id="right">&gt;</a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oList = document.getElementById("list");
+		var oLeft = document.getElementById("left");
+		var oRight = document.getElementById("right");
+		var oLi = document.getElementsByTagName("li");
+		var num = 1;
+		/*循环出图片位置*/
+		for(var i = 0; i < 24; i++) {
+			var x = i % 6;/*获取0-5*/
+			var y = Math.floor(i / 6);/*获取0-3*/
+			var li = document.createElement("li");
+			li.style.backgroundPosition = x * -125 + "px " + y * -125 + "px";
+			oList.appendChild(li);
+		};
+		/*点击事件*/
+		oRight.onclick = function() {
+			num++;
+			if(num > 24) {
+				num = 1;
+			};
+			alls();
+		};
+		oLeft.onclick = function() {
+			num--;
+			if(num < 1) {
+				num = 24;
+			};
+			alls();
+		}
+		/*遍历每张图片*/
+		function alls () {
+			var arr = [];
+				for( var i=0;i<24;i++ ){
+					arr.push(i);
+				};
+			var timer = setInterval(function  () {
+				var index = Math.floor(Math.random()*arr.length);/*获取0-23*/
+				oLi[ arr[ index ] ].style.backgroundImage = 'url(img/'+num+'.jpg)';
+				arr.splice( index , 1 );
+				if( arr.length == 0 ){
+						clearInterval( timer );
+				};	
+			},30)
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+
+</html>

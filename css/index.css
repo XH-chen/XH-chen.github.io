@@ -1,0 +1,31 @@
+.container{
+	width: 1200px;
+	min-width: 1200px;
+	margin: 50px auto;
+}
+.container a{
+	width: 200px;
+	height: 200px;
+	background: burlywood;
+	display: inline-block;
+	border: 1px solid brown;
+	box-sizing: border-box;
+	text-decoration: none;
+	text-align: center;
+	line-height: 200px;
+	font-size: 30px;
+	font-weight: 900;
+	color: blueviolet;
+	box-shadow: 0px 0px 5px blueviolet;
+	margin-right: 50px;
+	opacity: .8;
+	transition: 1s;
+	margin-bottom: 50px;
+}
+.container a:hover{
+	border-radius: 50%;
+	opacity: 1;
+}
+a.nomarginRright{
+	margin-right: 0px;
+}

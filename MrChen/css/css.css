@@ -1,0 +1,17 @@
+a.mybtn{
+	text-decoration: none;
+	color: #767C8A;
+	display: inline-table;
+	padding: 5px 10px;
+	border: 1px solid #767C8A;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+	margin-right: 5px;
+}
+.show{
+	display: inline-block;
+}
+.hide{
+	display: none;
+}

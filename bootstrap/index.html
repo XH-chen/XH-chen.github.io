@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+		<style type="text/css">
+			html,body,ul{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color: #EAEAEA;
+			}
+			a{
+				text-decoration: none;
+			}
+			.main-header{
+				width: 100%;
+				background-image: url(img/banpic.jpg);
+				background-position: center 20%;
+				padding: 62px 0px;
+			}
+			h1.col-sm-12{
+				text-align: center;
+				color: white;
+				font-size: 42px;
+			}
+			h1.col-sm-12::selection{
+				background-color: #EF342E;
+			}
+			div.col-sm-12{
+				text-align: center;
+			}
+			.main-header div.col-sm-12 a{
+				display: inline-block;
+				width: 110px;
+				height: 36px;
+				text-align: center;
+				line-height: 36px;
+				border: 1px solid #F1362F;
+				text-decoration: none;
+				color: white;
+				position: relative;
+				bottom: -40px;
+				font-size: 14px;
+			}
+			#largeload{
+				width: 134px;
+			}
+			#smallload{
+				width: 86px;
+			}
+			.main-header div.col-sm-12 a:hover{
+				background-color: #303030;
+			}
+			@media screen and (max-width: 730px) {
+				.main-header div.col-sm-12 a{
+					display: block;
+					margin: 0 auto;
+					width: 80%;
+					max-width: 340px;
+					margin-bottom: 10px;
+				}
+				#largeload{
+					width: 80%;
+					max-width: 340px;
+				}
+				#smallload{
+					width: 80%;
+					max-width: 340px;
+				}
+			}
+			.main-navigation{
+				width: 100%;
+				border-bottom: 1px solid #E1E1E1;
+				background-color: white;
+			}
+			.main-menu{
+				text-align: center;
+				position: relative;
+			}
+			.main-menu a{
+				display: inline-block;
+				height: 56px;
+				line-height: 56px;
+				padding: 0px 21px;
+				text-align: center;
+				text-decoration: none;
+				color: #505050;
+				font-size: 14px;
+			}
+			.main-menu a:nth-of-type(1){
+				border-bottom: 2px solid red;
+			}
+			.main-menu a:hover{
+				color: #F46878;
+			}
+			div.smallnav{
+				width: 100%;
+				text-align: center;
+				height: 60px;
+				font-size: 30px;
+				line-height: 60px;
+				display: none;
+				cursor: pointer;
+			}
+			@media screen and (max-width: 730px){
+				.main-menu{
+					display: none;
+				}
+				div.smallnav{
+					display: block;
+				}
+				.main-menu a{
+					display: block;
+					text-align: left;
+				}
+			}
+			#blockd{
+				display: block;
+			}
+			.main-content{
+				width: 100%;
+				background-color: #EAEAEA;
+				margin-top: 50px;
+			}
+			.content_left_01{
+				background-color: white;
+				padding: 10px 30px 30px 30px;
+				margin-bottom: 20px;
+			}
+			.content_left_01 h1{
+				text-align: center;
+			}
+			.content_left_01 a{
+				display: inline-block;
+				color: #303030;
+				text-decoration: none;
+				font-size: 28px;
+			}
+			.post-detail{
+				text-align: center;
+				font-size: 12px;
+				color: #959595;
+				margin-top: 12px;
+				margin-bottom: 30px;
+			}
+			.authod{
+				display: inline-block;
+				margin-right: 5px;
+			}
+			.authod a{
+				font-size: 12px;
+				color: #F4645F;
+			}
+			.authod a:hover{
+				text-decoration: underline;
+			}
+			.time:before{
+				content: "•";
+			}
+			.pic img{
+				width: 100%;
+				height: 100%;
+			}
+			.page{
+				margin: 30px 0px;
+				font-size: 18px;
+			}
+			.lookall a{
+				width: 86px;
+				height: 36px;
+				display: inline-block;
+				font-size: 12px;
+				line-height: 36px;
+				text-align: center;
+				background-color: #F4645F;
+				color: white;
+			}
+			.lookall a:hover{
+				background-color: #3B2C2C;
+			}
+			.content_left_01 footer{
+				margin-top: 30px;
+				border-top: 1px solid #EBEBEB;
+				padding-top: 21px;
+				margin-bottom: 10px;
+				
+			}
+			.content_left_01 footer a{
+				color: #888888;
+				font-size: 16px;
+			}
+			
+			.content_right_01,.content_right_02,.content_right_03{
+				background-color: white;
+				padding: 20px;
+				margin-bottom: 35px;
+			}
+			.content_right_01 h1,.content_right_02 h1,.content_right_03 h1{
+				margin: 0px;
+				font-size: 22px;
+				padding-bottom: 5px;
+				border-bottom: 1px solid #EBEBEB;
+				position: relative;
+				margin-bottom: 21px;
+			}
+			.content_right_01 h1:after,.content_right_02 h1:after,.content_right_03 h1:after{
+				content: "";
+				width: 100px;
+				border-top: 1px solid red;
+				position: absolute;
+				left: 0px;
+				bottom: -1px;
+			}
+			.content_right_01 .qqzu{
+				font-size: 14px;
+				color: #3E2727;
+				height: 24px;
+				margin-bottom: 10px;
+			}
+			.answerandquertion,.answerandquertion a{
+				font-size: 14px;
+				color: orangered;
+			}
+			.loading a{
+				display: block;
+				height: 36px;
+				background-color: #B92C28;
+				color: white;
+				text-align: center;
+				line-height: 36px;
+				text-decoration: none;
+			}
+			.loading a:hover{
+				background-color: #122B40;
+			}
+			.content_right_03biaoqian a{
+				display: inline-block;
+				height: 27px;
+				border: 1px solid #EAEAEA ;
+				padding: 0px 3px;
+				text-align: center;
+				line-height: 27px;
+				margin-right: 7px;
+				margin-bottom: 7px;
+				font-size: 14px;
+				text-decoration: none;
+				color: #959595;
+			}
+			.content_right_03biaoqian a:hover{
+				background-color: #F4645F;
+				color: white;
+			}
+			.main-footer{
+				width: 100%;
+				background-color: #202020;
+			}
+			.footer_00{
+				padding: 20px 30px;
+			}
+			.footer_00 h4{
+				text-align: left;
+				padding-bottom: 10px;
+				border-bottom: 1px solid #303030;
+				position: relative;
+				color: #F1FFFF;
+				margin-bottom: 20px;
+				font-size: 20px;
+				font-weight: 900;
+			}
+			.footer_00 h4:after{
+				content: "";
+				width: 80px;
+				border-top: 1px solid #F4645F;
+				position: absolute;
+				left: 0px;
+				bottom: -1px;
+			}
+			.footer_01_page{
+				padding-bottom: 10px;
+				border-bottom: 1px dashed #303030;
+				margin-bottom: 20px;
+			}
+			.footer_01_page a{
+				display: block;
+				font-size: 14px;
+				text-align: left;
+				text-decoration: none;
+				color: #959595;
+				margin-bottom: 5px;
+			}
+			.footer_01_page a:hover{
+				color: #C7254E;
+			}
+			.footer_01_page div{
+				text-align: left;
+				color: #505050;
+			}
+			#footer_02_btn{
+				text-align: left;
+			}
+			#footer_02_btn a{
+				display: inline-block;
+				padding: 0px 3px;
+				margin-right: 5px;
+				margin-bottom: 5px;
+				text-decoration: none;
+				color: #9C9C9C;
+				border: 1px solid #303030;
+			}
+			#footer_02_btn a:hover{
+				background-color: #F3635E;
+				color: white;
+			}
+			.footer_03_page{
+				text-align: left;
+				border-bottom: 1px dashed #303030;
+				margin-bottom: 20px;
+			}
+			.footer_03_page a{
+				display: inline-block;
+				padding:5px;
+				margin-right: 10px;
+				margin-bottom: 10px;
+				color: #9C9C9C;
+				text-decoration: none;
+			}
+			.footer_03_page a:hover{
+				background-color: #F3635E;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main-header">
+			<div class="container">
+				<div class="row">
+					<h1 class="col-sm-12">为 WEB 艺术家创造的 PHP 框架。</h1>
+					<div class="col-sm-12">
+						<a href="">5.1 中文文档</a>
+						<a href="">5.0 中文文档</a>
+						<a href="">4.1 中文文档</a>
+						<a href="">3.1 中文文档</a>
+						<a id="largeload" href="">Lemans 中文文档</a>
+						<a id="smallload" href="">问答社区</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="main-navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 smallnav">
+						<span class="glyphicon glyphicon-align-justify"></span>
+					</div>
+					<ul class="col-sm-12 main-menu">
+						<a href="">首页</a>
+						<a href="">Lemans</a>
+						<a href="">中文文档</a>
+						<a href="">下载离线文档</a>
+						<a href="">API</a>
+						<a href="">PHP中文手册</a>
+						<a href="">Comspoer</a>
+						<a href="">PHP编程之道</a>
+						<a href="">问答社区</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 content_left">
+						<div class="content_left_01">
+							<h1><a href="">Laravel 5.5 将是下一个 LTS 版本，预计 7/8 月份发布</a></h1>
+							<div class="post-detail">
+								<span class="authod">
+									作者：
+									<a href="">王赛</a>
+								</span>
+								<span class="time">
+									2017年2月21日
+								</span>
+							</div>
+							<div class="pic">
+								<a href="">
+									<img src="img/left.png"/>
+								</a>
+							</div>
+							<p class="page">Laravel 的上一个 LTS（长期支持）版本是 Laravel 5.1，发布于 2015 年 6 月，按照对 LTS 版本的约定，两年的 bug 修复支持到今年中旬就结束了，所以今年中旬必然要出一个 LTS 后继版本，就是 Laravel 5.5。 今天 Laravel 官方在 twitter 上发布消息，Lara</p>
+							<div class="lookall">
+								<a href="">阅读全文</a>
+							</div>
+							<footer>
+								<a href=""><span class="glyphicon glyphicon-folder-open"></span></a>
+							</footer>
+						</div>
+						<div class="content_left_01">
+							<h1><a href="">Laravel 5.3 正式发布</a></h1>
+							<div class="post-detail">
+								<span class="authod">
+									作者：
+									<a href="">王赛</a>
+								</span>
+								<span class="time">
+									2017年2月21日
+								</span>
+							</div>
+							<div class="pic">
+								<a href="">
+									<img src="img/smallpic.jpg"/>
+								</a>
+							</div>
+							<p class="page">网上充斥着各式各样的 PHP 框架性能对比的文章。然而，他们总是把“苹果”和“橘子”做对比（看上去有点儿像，都是圆的，但其实不是一码事）。这次，我将着重对 Laravel、Symfony 和 Zend 这三个框架做性能对比，并且还要说明为什么这三个框架总是被错误的进行比较。 我给的对比结果你不必全信。读完这篇文章之后，</p>
+							<div class="lookall">
+								<a href="">阅读全文</a>
+							</div>
+							<footer>
+								<a href=""><span class="glyphicon glyphicon-folder-open"></span></a>
+							</footer>
+						</div>
+						<div class="content_left_01">
+							<h1><a href="">Laravel 之父：让 Laravel、Symfony、 Zend 来一场公平的性能测试</a></h1>
+							<div class="post-detail">
+								<span class="authod">
+									作者：
+									<a href="">王赛</a>
+								</span>
+								<span class="time">
+									2017年2月21日
+								</span>
+							</div>
+							<div class="pic">
+								<a href="">
+									<img src="img/smallleft.png"/>
+								</a>
+							</div>
+							<p class="page">Laravel 5.4 版本正式发布了！这一版本带来了很多新特性以及对原有功能的提升。 Laravel Dusk Laravel Dusk 是一个端到端（end-to-end）的浏览器测试工具。对于夹杂了 JavaScript 开发的应用，Dusk 可以提供页面交互测试，因此，你可以用 Dusk 测试点击按钮、链接、表</p>
+							<div class="lookall">
+								<a href="">阅读全文</a>
+							</div>
+							<footer>
+								<a href=""><span class="glyphicon glyphicon-folder-open"></span></a>
+							</footer>
+						</div>
+						<div class="content_left_01">
+							<h1><a href="">Laracon 开发者大会快报：听 Taylor Otwell 讲解 Laravel 5.3 的新特性</a></h1>
+							<div class="post-detail">
+								<span class="authod">
+									作者：
+									<a href="">王赛</a>
+								</span>
+								<span class="time">
+									2017年2月21日
+								</span>
+							</div>
+							<p class="page">网上充斥着各式各样的 PHP 框架性能对比的文章。然而，他们总是把“苹果”和“橘子”做对比（看上去有点儿像，都是圆的，但其实不是一码事）。这次，我将着重对 Laravel、Symfony 和 Zend 这三个框架做性能对比，并且还要说明为什么这三个框架总是被错误的进行比较。 我给的对比结果你不必全信。读完这篇文章之后，</p>
+							<div class="lookall">
+								<a href="">阅读全文</a>
+							</div>
+							<footer>
+								<a href=""><span class="glyphicon glyphicon-folder-open"></span></a>
+							</footer>
+						</div>
+					</div>
+					<div class="col-md-4 content_right">
+						<div class="content_right_01">
+							<h1>社区</h1>
+							<div class="qqzu">QQ群：4452221993</div>
+							<div class="answerandquertion">
+								<span class="glyphicon glyphicon-briefcase"></span>
+								<a href="">问答社区</a>
+							</div>
+						</div>
+						<div class="content_right_02">
+							<h1>下载</h1>
+							<div class="loading">
+								<a href="">Laravel & Lumen 一键安装包下载</a>
+							</div>
+						</div>
+						<div class="content_right_03">
+							<h1>标签云</h1>
+							<div class="content_right_03biaoqian">
+								<a href="">Laravel 5.2</a>
+								<a href="">镜像</a>
+								<a href="">新版本发布</a>
+								<a href="">命名空间</a>
+								<a href="">微空间</a>
+								<a href="">微站建设</a>
+								<a href="">Laravel</a>
+								<a href="">升级</a>
+								<a href="">Event</a>
+								<a href="">Artisan</a>
+								<a href="">Laravel 5.0</a>
+								<a href="">Laravel 5.1</a>
+								<a href="">Laravel 5.3</a>
+								<a href="">错误页</a>
+								<a href="">…</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 footer_00 footer_01">
+						<h4>最新文章</h4>
+						<div class="footer_01_page">
+							<div>
+								<a href="">Laravel 5.5 将是下一个 LTS 版本，预计 7/8 月份发布</a>
+							</div>
+							<div>2017年2月29号</div>
+						</div>
+						<div class="footer_01_page">
+							<a href="">Laravel 5.4 版本正式发布</a>
+							<div>2017年3月29号</div>
+						</div>
+						<div class="footer_01_page">
+							<a href="">Laravel 之父：让 Laravel、Symfony、 Zend 来一场公平的性能测试</a>
+							<div>2016年1月29号</div>
+						</div>
+					</div>
+					<div class="col-md-4 footer_00 footer_02">
+						<h4>标签云</h4>
+						<div id="footer_02_btn">
+							<a href="">Laravel 5.2</a>
+							<a href="">镜像</a>
+							<a href="">新版本发布</a>
+							<a href="">命名空间</a>
+							<a href="">微空间</a>
+							<a href="">微站建设</a>
+							<a href="">Laravel</a>
+							<a href="">升级</a>
+							<a href="">Event</a>
+							<a href="">Artisan</a>
+							<a href="">Laravel 5.0</a>
+							<a href="">Laravel 5.1</a>
+							<a href="">Laravel 5.3</a>
+							<a href="">错误页</a>
+							<a href="">…</a>
+						</div>
+					</div>
+					<div class="col-md-4 footer_00 footer_03">
+						<h4>合作伙伴</h4>
+						<div class="footer_03_page">
+							<a href="">Bootstrap中文网</a>
+							<a href="">开放CDN服务</a>
+							<a href="">开放CDN服务</a>
+							<a href="">Bootstrap中文网</a>
+						</div>
+						<div class="footer_03_page">
+							<a href="">Loadshed中文文档</a>
+							<a href="">开放CDN服务</a>
+						</div>
+						<div class="footer_03_page">
+							<a href="">Loadshed中文文档</a>
+							<a href="">开放CDN服务</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var smallnav=document.querySelector(".smallnav");
+		var menu=document.querySelector(".main-menu");
+		var num=0;
+		function css(obj,attr){
+			if(obj.currentStyle){
+				return obj.currentStyle[attr];
+			}else{
+				return getComputedStyle(obj)[attr];
+			}
+		}
+		smallnav.onclick=function(){
+			if(num==0){
+				menu.setAttribute("id","blockd");
+				num=2;
+			}else{
+				menu.removeAttribute("id");
+				num=0;
+			}
+		}
+	</script>
+</html>
