@@ -1,8 +1,4 @@
-window.onresize=function(){
-	location.reload();
-}
-
-
+//设置每一屏的高度，自适应；
 function setheight(){
 	var iH=document.documentElement.clientHeight;
 	var section = document.getElementsByClassName("section");
@@ -12,7 +8,10 @@ function setheight(){
 }
 setheight();
 
-
+window.onresize=function(){
+	location.reload();
+}
+//第四页轮播图效果的实现；
 function setlunbo(){
 	var list=document.getElementById("userggpt");
 	var page=document.getElementsByClassName("page")[0];
@@ -42,8 +41,8 @@ function setlunbo(){
 	}
 	right.onclick=function(){
 		if(on_off){
-			if(lunbonum==5){
-				lunbonum=5
+			if(lunbonum==4){
+				lunbonum=4
 			}else{
 				lunbonum++;
 			}
@@ -90,6 +89,9 @@ function setlunbo(){
 
 setlunbo();
 
+
+
+//设置点击第四页搜索时候，链接百度搜索api的效果
 function setsearch(){
 	var txt = document.getElementById("txt");
 	var btn = document.getElementById("btn");
@@ -101,9 +103,6 @@ function setsearch(){
 	}
 	search.onclick=function(){
 		list.style.display="none";
-	}
-	search.onmousewheel=function(ev){
-		ev.preventDefault();
 	}
 	btn.onclick=function(){
 		var val = txt.value;
@@ -138,7 +137,7 @@ function setsearch(){
 setsearch();
 
 
-
+//jsonp封装函数
 function jsonp(obj){
 	obj.param[obj.cbName] = obj.fnName;
 	var oS = document.createElement('script');
@@ -154,7 +153,7 @@ function jsonp(obj){
 	document.body.removeChild(oS);
 }
 
-
+//转化时间，变为2017-03-04这样的时间格式
 function getTime(num){
 	var data=new Date(num*1000);
 	var year=data.getFullYear();
@@ -165,7 +164,7 @@ function getTime(num){
 	var osec=data.getSeconds();
 	return year+"-"+month+"-"+oday+" "+ohour+":"+omin+":"+osec;
 }
-
+//数组的查找，如果有则返回
 function arrindexof(str,arr){
 	for(var i=0;i<arr.length;i++){
 		if(str==arr[i]){
@@ -175,6 +174,7 @@ function arrindexof(str,arr){
 	return -1;
 }
 
+//设置评论区域的效果；
 var review_num=1;
 function setreview(){
 	var txt = $("#txtarea");
@@ -304,7 +304,6 @@ function setreview(){
 				var parent = $(this).parent().parent().parent().remove();
 				dataRender(review_num);
 				setbtn();
-				arr.splice(arrindexof(this.id))
 			}
 		});
 	})
@@ -333,6 +332,7 @@ function setreview(){
 setreview();
 
 
+
 //设置音乐播放效果图
 function setmusic(){
 	var music = document.getElementsByTagName("audio")[0];
@@ -352,8 +352,7 @@ function setmusic(){
 		
 	}
 	var rouate=0;
-	var timer=null;
-	timer = setInterval(function(){
+	var timer = setInterval(function(){
 		rouate++;
 		omusic.style.transform="rotateY("+rouate%360+"deg)";
 	},10)
@@ -361,40 +360,3 @@ function setmusic(){
 
 
 setmusic();
-
-
-
-function setfilter(){
-	var timer = null;
-	var sec1btn = document.getElementsByClassName("smallbtn")[0];
-	var num=1;
-	
-	timer = setInterval(function(){
-		if(num==1){
-			sec1btn.style.filter="grayscale(1)";
-			num=0
-		}else{
-			sec1btn.style.filter="grayscale(0)";
-			num=1;
-		}
-	},1000)
-	
-	sec1btn.onmouseover=function(){
-		num=0;
-		sec1btn.style.filter="grayscale(0)";
-		clearInterval(timer);
-	}
-	
-	sec1btn.onmouseout=function(){
-		timer = setInterval(function(){
-			if(num==1){
-				sec1btn.style.filter="grayscale(1)";
-				num=0
-			}else{
-				sec1btn.style.filter="grayscale(0)";
-				num=1;
-			}
-		},1000)
-	}
-}
-setfilter();
