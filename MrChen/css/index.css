@@ -17,7 +17,7 @@ html,body{
 	z-index: 999;
 }
 .meunnav .meun_main{
-	width: 1000px;
+	width: 1050px;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -90,7 +90,7 @@ html,body{
 }
 #sec1main{
 	position: absolute;
-	width: 1100px;
+	width: 1000px;
 	height: 600px;
 	left: 0px;
 	top: 0px;
