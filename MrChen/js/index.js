@@ -8,9 +8,9 @@ function setheight(){
 }
 setheight();
 
-window.onresize=function(){
-	location.reload();
-}
+//window.onresize=function(){
+//	location.reload();
+//}
 //第四页轮播图效果的实现；
 function setlunbo(){
 	var list=document.getElementById("userggpt");
