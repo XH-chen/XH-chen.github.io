@@ -41,7 +41,7 @@ html,body{
 .nav_right li a{
 	display: block;
 	height: 100%;
-	padding: 20px;
+	padding: 20px 30px;
 	box-sizing: border-box;
 	text-decoration: none;
 	color: #888888;
